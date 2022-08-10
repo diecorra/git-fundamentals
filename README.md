@@ -47,8 +47,6 @@ To verify that the local folder is connected to the GitHub's remote repository w
 - no punctuation marks at the end of commit
 - imagine to write after the sentence "if applied, this commit will.."
 
-**git push**
-
 ---
 # PRO TIPS
 
@@ -87,3 +85,12 @@ Alias: insert alias in gitconfig (file in C/Programs/Git/etc)<bg>
   
 *.env         --> ignore all files with "env" extension<br>
 node_modules  --> ignore folder with thah name<br>
+
+  
+# REMOTE REPOSITORY
+  
+  **git branch** --> return the branch of the your repo
+  **git push -u origin master** --> first push to allineate local repo with remote repo
+  **git push**
+  **git pull**
+  
