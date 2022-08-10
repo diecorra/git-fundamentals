@@ -6,8 +6,9 @@ This is a summary of the commands covered in the **Git Fundamentals** course by 
 1. [Git-GitHub Fundamentals](#git-github-fundamentals)
 2. [PRO TIPS](#pro-tips)
 3. [Remote Repository](#remote-repository)
+4. [Branch](#branch)
 
-# Git-GitHub Fundamentals
+## GIT-GITHUB FUNDAMENTALS
 
 After registration on GitHub, create a repository.
 Then, we can create and commit files directly on GitHub if necessary.
@@ -93,4 +94,16 @@ node_modules  --> ignore folder with thah name<br>
   **git push -u origin master** --> first push to allineate local repo with remote repo
   **git push**
   **git pull**
+  
+# BRANCH
+  
+  in Git, a branch rapresents a temporary line. It is already created once the project is initialized.<br><br>
+  ![image](https://user-images.githubusercontent.com/32736570/183938635-2d233c73-15b2-42e2-9d02-5a4da849d9a7.png)
+  ![image](https://user-images.githubusercontent.com/32736570/183939072-ba45a7d0-f7eb-4a91-9063-704674c269b4.png)
+<br>
+<br>
+  
+  **git branch -M main** --> rename branche name with "main"<br>
+  **git checkout branchname** --> switched to branch "branchname"
+  **git branch -d branchname** --> delete branch "branchname"
   
