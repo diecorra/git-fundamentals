@@ -96,7 +96,7 @@ Alias: insert alias in gitconfig (file in C/Programs/Git/etc)<bg>
   
 # BRANCH
   
-  in Git, a branch rapresents a temporary line. It is already created once the project is initialized.<br><br>
+  in Git, a branch rapresents a temporary line. It is already created once the project is initialized. During new developments, it's possible to create new branches for new feaures.<br><br>
   ![image](https://user-images.githubusercontent.com/32736570/183938635-2d233c73-15b2-42e2-9d02-5a4da849d9a7.png)
   ![image](https://user-images.githubusercontent.com/32736570/183939072-ba45a7d0-f7eb-4a91-9063-704674c269b4.png)
 <br>
@@ -104,9 +104,11 @@ Alias: insert alias in gitconfig (file in C/Programs/Git/etc)<bg>
   
 |   |   |
 |---|---|
+|```git branch```|return the branch of the your repo|
+|```git branch branchname```|create new branch|
 |```git branch -M main```|rename branche name with "main"|
 |```git checkout branchname```|switched to branch "branchname"|
 |```git branch -d branchname```|delete branch "branchname"|
-|   |   |
-
+|```git checkout -d branchname```|create and switched to branch "branchname"|
+|```git merge branchname```|merge with "branchname"|
 
