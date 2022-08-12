@@ -8,7 +8,10 @@ This is a summary of the commands covered in the **Git Fundamentals** course by 
 3. [Remote Repository](#remote-repository)
 4. [Branch](#branch)
 5. [Rebase](#rebase)
-5. [Tag-Release](#tag-release)
+6. [Tag-Release](#tag-release)
+7. [Pull-Request](#pull-request)
+8. [Git-Stash](#git-stash)
+9. [Bonus](#bonus)
 
 ## GIT-GITHUB FUNDAMENTALS
 
@@ -91,7 +94,7 @@ Alias on Windows: insert alias in gitconfig (file in C/Programs/Git/etc)<bg>
   
 # REMOTE REPOSITORY
   
-|   |   |
+|command|description|
 |---|---|
 |```git branch```|return the branch of the your repo|
 |```git push -u origin master```|first push to allineate local repo with remote repo|
@@ -106,7 +109,7 @@ Alias on Windows: insert alias in gitconfig (file in C/Programs/Git/etc)<bg>
 <br>
 <br>
   
-|   |   |
+|command|description|
 |---|---|
 |```git branch```|return the branch of the your repo|
 |```git branch branchname```|create new branch|
@@ -135,12 +138,12 @@ So we have to do a ```git pull``` to download the latest changes, but now the ID
 Once time that we have choose, now we could make the ```git push```.
 
 ### Create remote branch
-|   |   |
+|command|description|
 |---|---|
 |```git push origin new_branch```|orgin is the alias of remote repo|
 
 ### Delete remote and local branch
-|   |   |
+|command|description|
 |---|---|
 |```git branch -d branchname```|delete local branch|
 |```git push origin --delete branchname```|delete remote branch|
@@ -149,7 +152,7 @@ Once time that we have choose, now we could make the ```git push```.
 
 What is the rebase command? It is used to rewrite the history(commit) of our project.
 
-|   |   |
+|command|description|
 |---|---|
 |```git rebase -i [HEAD~n][HASH]```|take the last n commit or the commit with that hash, then we have many options (type ```a``` to go to ***insert mode***)|
 |```reward```|replacing ```pick``` with option ```r```, then with ```:wq``` (to save) we can edit the commit message. Then ```:wq``` yet.|
@@ -175,7 +178,7 @@ Suppose we have a **"main" branch**, and one **"feature" branch**, and we are in
   
 The command **TAG** let us to create a simil branch but it's in read only, it is used when people wants to release new version.
   
-|   |   |
+|command|description|
 |---|---|
 |```git tag```|to see how many tags we have in history|
 |```git checkout v.1.0```|switched to tag "v.1.0"|
@@ -192,3 +195,45 @@ The command **TAG** let us to create a simil branch but it's in read only, it is
   3) Write the tag name
   4) Optional description and attachments 
   5) Publish or Save draft
+  
+  # PULL-REQUEST
+  
+  It's a request that we make inside a project (that could my public/private project or project of another author).
+  So, we can include code inside our project or we can propose a change inside a repository of an other author on GitHub.
+  
+  With the command ```fork```let us to clone a project of an other author and associate it with us.
+  So, we create the same project in our repository to be able to modify it later and make the pull request.
+  
+  ### Open a pull-request on GitHub:
+  - go to the repo that you want to edit
+  - now edit, create new file or something that you want to do
+  - make the ```commit``` with the click on "Commit" or "Commit new file"
+  - in the main page of repository now we have a button called "Compare & pull request", click that
+  - in the new page we can have all the options for the pull request
+  - once time that it's ready, click on "Create pull request" or "Create draft pull request" (for draft) 
+  
+  ### Close a pull-request on GitHub:
+  - go to the page with open pull requests
+  - click on "Close pull request"
+  - it's possible to reopen the request with the button "Reopen pull request"
+  
+  # GIT STASH
+  
+  |command|description|
+  |---|---|
+  |```git stash save my_stash```|This command allows you to "put aside for later" the changes made to our code, without committing them, so that it is possible, therefore, to go back to the last local "commit" and, if necessary, modify branches if necessary.|
+  |```git stash -u```|the untracked files too|
+  |```git stash list```|to see the list of stash|
+  |```git stash show```|to see the content of last stash|
+  |```git stash show stash_name```|to see the content of "stash_name", taked by ```git stash list```|
+  |```git stash pop```|allow us to apply the first change of the list we have put aside|
+  |```git stash pop stash_name```|allow us to apply the specific change we have put aside|
+  |```git stash apply stash_name```|make the same of pop but it doesn't delete the stash|
+  |```git stash drop [stash_name]```|delete the last/specific stash|
+  |```git stash clear```|delete all stashs|
+  |```git stash save stash_name -u``` ```git stash branch branch_name stash_name```|create a stash, then take a stash and copy in a (new) branch|
+  
+  # BONUS
+  |command|description|
+  |---|---|
+  |```git diff my_new_branch```|verify diff to my branch(the branch you are in) and the other branch(my_new_branch)|
