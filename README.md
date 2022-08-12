@@ -8,6 +8,7 @@ This is a summary of the commands covered in the **Git Fundamentals** course by 
 3. [Remote Repository](#remote-repository)
 4. [Branch](#branch)
 5. [Rebase](#rebase)
+5. [Tag-Release](#tag-release)
 
 ## GIT-GITHUB FUNDAMENTALS
 
@@ -159,14 +160,35 @@ What is the rebase command? It is used to rewrite the history(commit) of our pro
 |```git rebase -i [--root][HEAD~n][HASH] --exec "node index.js" ```|to execute and print results of file "index.js" from root, before type ```:wq```|
 
 ### MERGE VS REBASE
-If we have a **"main" branch**, and one **"feature" branch** :
-- with merge, the changes will be integrated (from the main) subsequently with another commit;
+Suppose we have a **"main" branch**, and one **"feature" branch**, and we are in main branch :
+  
+- with merge (```git merge feature```), the changes will be integrated subsequently with another commit;
 <br><br>***MERGE MAIN INTO FEATURE***<br>
 ![image](https://user-images.githubusercontent.com/32736570/184239993-cde9bfee-6414-4035-8ba7-1938acd1ee1c.png)
 
-- with rebase, takes our commit of the feature branch and put them in head of main branch;
+- with rebase, (```git rebase feature```), takes our commit of the feature branch and put them in head of main branch;
 <br>
 
 ![image](https://user-images.githubusercontent.com/32736570/184240665-be4a7f79-1812-4d97-876e-df143b80e708.png)
 
-#
+# TAG-RELEASE
+  
+The command **TAG** let us to create a simil branch but it's in read only, it is used when people wants to release new version.
+  
+|   |   |
+|---|---|
+|```git tag```|to see how many tags we have in history|
+|```git checkout v.1.0```|switched to tag "v.1.0"|
+|```git tag -a v.1.0```|let to create a tag with name "v.1.0", after confirm, cmd will ask us a description, finally ```:wq``` to exit|
+|```git tag -a -f v.1.0```|create a tag with force option|
+|```git -d v.1.0```|delete tag|
+|```git tag v.1.0 [HASH]```|associate tag to old commit (hash from ```git log --oneline```)|
+|```git push origin v.1.0```|sync local tag with remote tag|
+
+### Create a release
+  The concept of "tag" belongs to git, while "release" to remote, in this case to GitHub
+  1) ***Draft a new release*** in **Code** section of your GitHub repository, to create a new release
+  2) Choose a created tag, or create it, the same for branches
+  3) Write the tag name
+  4) Optional description and attachments 
+  5) Publish or Save draft
