@@ -1,6 +1,7 @@
 # Git Fundamentals
 
-This is a summary of the commands covered in the **Git Fundamentals** course by Fabio Biondi & Giorgio Boa.
+This is a summary of the commands covered in the **Git Fundamentals** course by Fabio Biondi & Giorgio Boa.<br>
+Link: https://fabiobiondi.teachable.com/p/github-fundamentals
 
 
 1. [Git-GitHub Fundamentals](#git-github-fundamentals)
@@ -237,3 +238,20 @@ The command **TAG** let us to create a simil branch but it's in read only, it is
   |command|description|
   |---|---|
   |```git diff my_new_branch```|verify diff to my branch(the branch you are in) and the other branch(my_new_branch)|
+  |```git diff```|pending changes in the current branch|
+  |```git diff > file_diff```|extract off ```git diff``` in a file|
+  |```git diff [HASH][HASH]```|diff between the 2 commits |
+  |```git bisect start```, ```git bisect bad HEAD```, ```git bisect good [hash]``` |find bugs and regressions|
+  |```git bisect HEAD [hash]|the same uf commands above, but in one command (the first parameter is the bad commmit, the second is the last good commit)|
+  |```git bisect log```|log of bisect|
+  |```git bisect bad```|we are saying that the current commit is bad|
+  |```git bisect good```| we are saying that the current commit is good|
+  |```git bisect reset```|I go back to the initial situation|
+  
+  ### Deploy static website (HTML, CSS, JS) on GitHub Pages
+  
+  1) Go on your repository on GitHub, "Settings", "Pages"
+  2) On "Source" options, select the branch that you would you like to deploy, and click on "Save"
+  
+  Your static website is online.
+  
